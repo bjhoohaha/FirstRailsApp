@@ -1,0 +1,27 @@
+<h1>Listing articles</h1>
+<!-- <br></br> -->
+<p><%=link_to 'New Article', new_article_path%></p>
+<%= form_tag destroy_multiple_articles_path, method: :delete do %>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th></th>
+  </tr>
+
+  <% @articles.each do |article| %>
+    <tr>
+      <td><%= truncate(article.title, length: 10) %></td>
+      <td><%= truncate(article.text, length:35) %></td>
+      <td><%= link_to 'Show', article_path(article) %></td>
+      <td><%= link_to 'Edit', edit_article_path(article) %></td>
+      <td><%= link_to 'Destroy', article_path(article), remote:true,
+              method: :delete %></td>
+      <td><%= check_box_tag "article[]", article.id %></td>
+
+  </tr>
+  <% end %>
+
+</table>
+  <%= submit_tag "delete selected" %>
+<% end %>
