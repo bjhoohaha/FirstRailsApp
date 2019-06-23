@@ -21,5 +21,4 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
-https://calm-harbor-97791.herokuapp.com
+* https://calm-harbor-97791.herokuapp.com
